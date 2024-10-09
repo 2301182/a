@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+}
+.menu_bar {
+    padding: 8px 5px 2px 5px;
+    margin: 0 auto;
+    height: 75px;
+    background-color: #F8F2D0
+}
