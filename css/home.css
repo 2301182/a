@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 91%;
+    background-color: antiquewhite;
+}
+
+.top{
+    position: fixed;
+    top: 12px;
+    width: 150px;
+    display: block;
+}
+
+.search{
+    position: fixed;
+    top: 25px;
+    right: 40%;
+    text-align: center;
+    line-height: 0px;
+}
+
+.cart{
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    text-align: right;
+    line-height: 0px;
+}
+
+.login{
+    top: 10px;
+    right: 50px;
+    position: fixed;
+    text-align: right;
+    line-height: 0px;
+}
