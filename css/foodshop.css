@@ -1,9 +1,40 @@
 body {
     margin: 0;
 }
-.menu_bar {
+
+#menu_bar {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    width: 1270px;
     padding: 8px 5px 2px 5px;
-    margin: 0 auto;
     height: 75px;
-    background-color: #F8F2D0
+    display: flex;
+    background-color: #F8F2D0;
+}
+
+#menu_search {
+    margin: 0 175px;
+    width: 350px;
+    height: 25px;
+}
+
+#menu_fill {
+    margin: 0 354px;
+}
+
+#menu_warp {
+    margin-left: auto;
+    margin-right: 50px;
+    padding-right: 0;
+}
+
+#menu_cart {
+    height: 40px;
+    margin: 10px 25px 0 10px;
+}
+
+#menu_acc {
+    height: 40px;
+    margin: 10px 10px 0 25px;
 }
