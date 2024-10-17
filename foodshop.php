@@ -9,6 +9,11 @@
 <body>
     <div id="menu_bar">
         <img src="img/icon_65.png">
+        <form method="post">
+            <input type="text" name="search">
+        </form>
+        <img src="img/cart.png">
+        <img src="img/account.png">
     </div>
 </body>
 </html>
