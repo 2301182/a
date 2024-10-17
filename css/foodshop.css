@@ -2,6 +2,7 @@ body {
     margin: 0;
 }
 
+/* メニューバー本体 */
 #menu_bar {
     position: fixed;
     margin: 0;
@@ -13,28 +14,36 @@ body {
     background-color: #F8F2D0;
 }
 
+/* メニューバーの検索バー */
 #menu_search {
     margin: 0 175px;
     width: 350px;
     height: 25px;
 }
 
+/* メニューバーの検索バーの左右埋め*/
 #menu_fill {
     margin: 0 354px;
 }
 
+/* メニューバーのアイコン右揃え */
 #menu_warp {
     margin-left: auto;
     margin-right: 50px;
     padding-right: 0;
 }
 
+/* メニューバーのカートアイコン */
 #menu_cart {
     height: 40px;
     margin: 10px 25px 0 10px;
 }
 
+/* メニューバーのアカウントアイコン */
 #menu_acc {
     height: 40px;
     margin: 10px 10px 0 25px;
 }
+/* ↑メニューバー系なので触らないでほしい */
+/* ↓ここから下にcss書き足してってほしい */
+/* できればcssそれぞれになんのcssか書いてくれると進捗が把握しやすい */
