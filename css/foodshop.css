@@ -2,48 +2,51 @@ body {
     margin: 0;
 }
 
-/* メニューバー本体 */
-#menu_bar {
-    position: fixed;
-    margin: 0;
-    top: 0;
-    width: 1270px;
-    padding: 8px 5px 2px 5px;
-    height: 75px;
-    display: flex;
-    background-color: #F8F2D0;
-}
+    /* メニューバー本体 */
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 89%;
+        background-color: #F8F2D0;
+    }
 
-/* メニューバーの検索バー */
-#menu_search {
-    margin: 0 175px;
-    width: 350px;
-    height: 25px;
-}
+    /*shopロゴ*/
+        .menu_top{
+        position: fixed;
+        top: 12px;
+        width: 150px;
+        display: block;
+    }
 
-/* メニューバーの検索バーの左右埋め*/
-#menu_fill {
-    margin: 0 354px;
-}
+    /* メニューバーの検索バー */
+    .menu_search {
+        position: fixed;
+        top: 12px;
+        right: 40%;
+        text-align: center;
+        line-height: 0px;
+    }
 
-/* メニューバーのアイコン右揃え */
-#menu_warp {
-    margin-left: auto;
-    margin-right: 50px;
-    padding-right: 0;
-}
+    /* メニューバーのカートアイコン */
+    .menu_cart {
+        position: fixed;
+        top: 10px;
+        right: 150px;
+        text-align: right;
+        line-height: 0px;
+    }
 
-/* メニューバーのカートアイコン */
-#menu_cart {
-    height: 40px;
-    margin: 10px 25px 0 10px;
-}
+    /* メニューバーのアカウントアイコン */
+    .menu_acc {
+        position: fixed;
+        top: 10px;
+        right: 50px;
+        text-align: right;
+        line-height: 0px;
+    }
 
-/* メニューバーのアカウントアイコン */
-#menu_acc {
-    height: 40px;
-    margin: 10px 10px 0 25px;
-}
 /* ↑メニューバー系なので触らないでほしい */
 /* ↓ここから下にcss書き足してってほしい */
 /* できればcssそれぞれになんのcssか書いてくれると進捗が把握しやすい */
