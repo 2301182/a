@@ -75,19 +75,44 @@
             echo "<p>値段:", htmlspecialchars($data['price']), "</p>";
             echo "<p>購入数:<input type='number' name='num'></p>";
             //レビュー表示
-        } else if(isset($_POST['tab'])){
-            //
-            echo "tab";
+            echo "<h3>レビュー一覧</h3>";
+            foreach($pdo -> query('SELECT * FROM review WHERE goods_id = '.$_POST['goods_id'].' ORDER BY review_id DESC') as $row){
+                //評価
+                echo "<p>";
+                echo "<strong>", htmlspecialchars($row['review_title']),"</strong><br>";
+                for($i = 0; $i < $row['assessment']; $i++){
+                    echo "★";
+                }
+                for($i = 0; $i < 5-$row['assessment']; $i++){
+                    echo "☆";
+                }
+                echo "<br>";
+                //内容
+                echo htmlspecialchars($row['sentence']), "<br>";
+                echo htmlspecialchars($row['create_day']), "</p>";
+            }
+            //レビュー投稿遷移
+            echo '<form method="post">';
+            echo '<input type="submit" name="review">';
+            echo '</form>';
+        } else if(isset($_POST['review'])){
+        //レビュー投稿
+            
+        } else if(isset($_POST['aa'])){
+        //
+
         } else {
-            //トップページ
+        //トップページ
             foreach($pdo -> query('SELECT * FROM goods ORDER BY goods_id DESC') as $row){
                 echo '<form method="post" name="detail">';
+                echo '<div id="goods_list">';
                 echo "<h3>", htmlspecialchars($row['goods_name']), "</h3>";
                 echo "<p>説明:", htmlspecialchars($row['goods_explanation']), "</p>";
                 echo '<p><img src="', htmlspecialchars($row['goods_photo']), '"style="height:80px"></p>';
                 echo "<p>値段: ", htmlspecialchars($row['price']), "</p>";
                 echo '<input type="hidden" name="goods_id" value="',$row['goods_id'],'">';
                 echo '<p><input type="submit" name="detail"></p>';
+                echo '</div>';
                 echo '</form>';
             }
         }
