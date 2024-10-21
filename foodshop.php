@@ -2,22 +2,37 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/foodshop.css" type="text/css">
     <title>FoodShop</title>
 </head>
 <body>
-    <div id="menu_bar">
-        <a href="foodshop.php" name="icon"><img src="img/menu/icon_65.png"></a>
-        <form method="post">
-            <p><input id="menu_search" type="text" name="search"></p>
-        </form>
-        <div id="menu_warp">
-            <a href="foodshop_cart.php"><img src="img/menu/cart.png" id="menu_cart"></a>
-            <a href="foodshop_account.php"><img src="img/menu/account.png" id="menu_acc"></a>
-        </div>
+<header>
+    <div class="menu_top">
+        <a href="foodshop.php" name="icon">
+        <img src="img/menu/icon_65.png">
+        </a>
     </div>
-    <br><br><br><br>
+
+    <form method="post" class="menu_search">
+        <p><input  type="text" name="search" size="30"></p>
+    </form>
+
+
+    <div class="menu_cart">
+        <a href="foodshop_cart.php">
+        <img src="img/menu/cart.png" while="50" height="50" >
+        </a>
+    </div>
+
+    <div class="menu_acc">
+        <a href="foodshop_account.php">
+        <img src="img/menu/account.png" while="50" height="50">
+        </a>
+    </div>        
+</header>    
+<br><br><br><br>
+    
     <?php
         $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
                 dbname=LAA1554150-foodshop;charset=utf8',
