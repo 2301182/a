@@ -28,12 +28,14 @@
             //出力関数
             function search_result($data){
                 echo '<form method="post" name="detail">';
-                echo "<h3>", htmlspecialchars($data['goods_name']), "</h3>";
-                echo "<p>説明:", htmlspecialchars($data['goods_explanation']), "</p>";
-                echo '<p><img src="', htmlspecialchars($data['goods_photo']), '"style="height:80px"></p>';
-                echo "<p>値段: ", htmlspecialchars($data['price']), "</p>";
+                echo '<div id="search_list">';
+                echo '<p id="search_list_name">', htmlspecialchars($data['goods_name']), "</p>";
+                echo '<p id="search_list_description">説明:', htmlspecialchars($data['goods_explanation']), "</p>";
+                echo '<p id="search_list_img_p"><img src="', htmlspecialchars($data['goods_photo']), 'id="search_list_img"></p>';
+                echo '<p id="search_list_price">値段: ', htmlspecialchars($data['price']), '</p>';
                 echo '<input type="hidden" name="goods_id" value="',$data['goods_id'],'">';
-                echo '<p><input type="submit" name="detail"></p>';
+                echo '<p id="search_list_button"><input type="submit" name="detail"></p>';
+                echo '</div>';
                 echo '</form>';
             }
             $boo = true;
@@ -60,7 +62,7 @@
             }
             //不一致
             if($boo){
-                echo "検索したキーワードに合う商品が見つかりませんでした。";
+                echo '<p id="search_fail">検索したキーワードに合う商品が見つかりませんでした。</p>';
             }
         } else if(isset($_POST['detail'])){
         //商品詳細
@@ -69,31 +71,35 @@
             $sql -> execute([$_POST['goods_id']]);
             $data = $sql->fetch(PDO::FETCH_ASSOC);
             //商品データ表示
-            echo "<h2>", htmlspecialchars($data['goods_name']), "</h2>";
-            echo "<p>説明:", htmlspecialchars($data['goods_explanation']), "</p>";
-            echo "<p><img src='", htmlspecialchars($data['goods_photo']) ,"' style='height:120px'></p>";
-            echo "<p>値段:", htmlspecialchars($data['price']), "</p>";
-            echo "<p>購入数:<input type='number' name='num'></p>";
+            echo "<div id='detail_list'>";
+            echo "<p id='detail_list_name'>", htmlspecialchars($data['goods_name']), "</p>";
+            echo "<p id='detail_list_description'>説明:", htmlspecialchars($data['goods_explanation']), "</p>";
+            echo "<p id='detail_list_img_p'><img src='", htmlspecialchars($data['goods_photo']) ,"id='detail_list_img'></p>";
+            echo "<p id='detail_list_price'>値段:", htmlspecialchars($data['price']), "</p>";
+            echo "<p id='detail_list_buynum_p'>購入数:<input type='number' name='num' id='detail_list_buynum'></p>";
+            echo "</div>";
             //レビュー表示
-            echo "<h3>レビュー一覧</h3>";
+            echo "<div id='detail_review_list'>レビュー一覧</div><br>";
             foreach($pdo -> query('SELECT * FROM review WHERE goods_id = '.$_POST['goods_id'].' ORDER BY review_id DESC') as $row){
                 //評価
-                echo "<p>";
-                echo "<strong>", htmlspecialchars($row['review_title']),"</strong><br>";
+                echo "<div id='detail_review'>";
+                echo "<div id='detail_review_title'>", htmlspecialchars($row['review_title']),"</div><br>";
+                echo "<div id='detail_review_assessment'>";
                 for($i = 0; $i < $row['assessment']; $i++){
                     echo "★";
                 }
                 for($i = 0; $i < 5-$row['assessment']; $i++){
                     echo "☆";
                 }
-                echo "<br>";
+                echo "</div><br>";
                 //内容
-                echo htmlspecialchars($row['sentence']), "<br>";
-                echo htmlspecialchars($row['create_day']), "</p>";
+                echo "<div id='detail_review_sentence'>", htmlspecialchars($row['sentence']), "</div><br>";
+                echo "<div id='detail_review_createday'>", htmlspecialchars($row['create_day']), "</div><br>";
+                echo "</div>";
             }
             //レビュー投稿遷移
             echo '<form method="post">';
-            echo '<input type="submit" name="review">';
+            echo '<input id="detail_review_button" type="submit" name="review" value="投稿">';
             echo '</form>';
         } else if(isset($_POST['review'])){
         //レビュー投稿
@@ -105,13 +111,13 @@
         //トップページ
             foreach($pdo -> query('SELECT * FROM goods ORDER BY goods_id DESC') as $row){
                 echo '<form method="post" name="detail">';
-                echo '<div id="goods_list">';
-                echo "<h3>", htmlspecialchars($row['goods_name']), "</h3>";
-                echo "<p>説明:", htmlspecialchars($row['goods_explanation']), "</p>";
-                echo '<p><img src="', htmlspecialchars($row['goods_photo']), '"style="height:80px"></p>';
-                echo "<p>値段: ", htmlspecialchars($row['price']), "</p>";
+                echo '<div id="top_list">';
+                echo "<p id='top_list_name'>", htmlspecialchars($row['goods_name']), "</p>";
+                echo "<p id='top_list_description'>説明:", htmlspecialchars($row['goods_explanation']), "</p>";
+                echo '<p id="top_list_img_p"><img src="', htmlspecialchars($row['goods_photo']), 'id="top_list_img"></p>';
+                echo "<p id='top_list_price'>値段: ", htmlspecialchars($row['price']), "</p>";
                 echo '<input type="hidden" name="goods_id" value="',$row['goods_id'],'">';
-                echo '<p><input type="submit" name="detail"></p>';
+                echo '<p><input id="top_list_button" type="submit" name="detail"></p>';
                 echo '</div>';
                 echo '</form>';
             }
