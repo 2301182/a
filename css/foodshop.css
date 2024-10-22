@@ -16,35 +16,40 @@ body {
         .menu_top{
         position: fixed;
         top: 12px;
-        width: 150px;
         display: block;
     }
-
+    
+    /*検索バーの大きさ調整*/
+    .search{
+        text-align: center;
+        padding-right: 20%;
+    }
+    
     /* メニューバーの検索バー */
     .menu_search {
         position: fixed;
-        top: 12px;
-        right: 40%;
-        text-align: center;
-        line-height: 0px;
+        top: 5%;
+        width: 25%;
     }
-
+    
     /* メニューバーのカートアイコン */
     .menu_cart {
         position: fixed;
-        top: 10px;
         right: 150px;
         text-align: right;
-        line-height: 0px;
     }
 
     /* メニューバーのアカウントアイコン */
     .menu_acc {
         position: fixed;
-        top: 10px;
         right: 50px;
         text-align: right;
-        line-height: 0px;
+    }
+    
+    img{
+        width: 75%;
+        height: 75%;
+        top: 35%;
     }
 
 /* ↑メニューバー系なので触らないでほしい */
