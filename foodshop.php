@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./css/foodshop.css" type="text/css">
     <title>FoodShop</title>
 </head>
@@ -14,20 +14,22 @@
         </a>
     </div>
 
-    <form method="post" class="menu_search">
-        <p><input  type="text" name="search" size="30"></p>
+    <div class="search">
+    <form method="post" >
+        <p><input  type="text" name="search" class="menu_search"></p>
     </form>
+    </div>
 
 
     <div class="menu_cart">
         <a href="foodshop_cart.php">
-        <img src="img/menu/cart.png" while="50" height="50" >
+        <img src="img/menu/cart.png"  >
         </a>
     </div>
 
     <div class="menu_acc">
         <a href="foodshop_account.php">
-        <img src="img/menu/account.png" while="50" height="50">
+        <img src="img/menu/account.png" >
         </a>
     </div>        
 </header>    
