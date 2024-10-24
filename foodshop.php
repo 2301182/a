@@ -13,24 +13,20 @@
         <img src="img/menu/icon_65.png">
         </a>
     </div>
-
     <form method="post" class="menu_search">
-        <p><input  type="text" name="search" size="30"></p>
+        <p id="menu_search_p"><input type="text" name="search" size="40" id="menu_search_input"></p>
     </form>
-
-
     <div class="menu_cart">
         <a href="foodshop_cart.php">
-        <img src="img/menu/cart.png" while="50" height="50" >
+        <img src="img/menu/cart.png" height="50" >
         </a>
     </div>
-
     <div class="menu_acc">
         <a href="foodshop_account.php">
-        <img src="img/menu/account.png" while="50" height="50">
+        <img src="img/menu/account.png" height="50">
         </a>
-    </div>        
-</header>    
+    </div>
+</header>
 <br><br><br><br>
     
     <?php
@@ -46,7 +42,7 @@
                 echo '<div id="search_list">';
                 echo '<p id="search_list_name">', htmlspecialchars($data['goods_name']), "</p>";
                 echo '<p id="search_list_description">説明:', htmlspecialchars($data['goods_explanation']), "</p>";
-                echo '<p id="search_list_img_p"><img src="', htmlspecialchars($data['goods_photo']), 'id="search_list_img"></p>';
+                echo '<p id="search_list_img_p"><img src="', htmlspecialchars($data['goods_photo']), '" id="search_list_img"></p>';
                 echo '<p id="search_list_price">値段: ', htmlspecialchars($data['price']), '</p>';
                 echo '<input type="hidden" name="goods_id" value="',$data['goods_id'],'">';
                 echo '<p id="search_list_button"><input type="submit" name="detail"></p>';
@@ -89,7 +85,7 @@
             echo "<div id='detail_list'>";
             echo "<p id='detail_list_name'>", htmlspecialchars($data['goods_name']), "</p>";
             echo "<p id='detail_list_description'>説明:", htmlspecialchars($data['goods_explanation']), "</p>";
-            echo "<p id='detail_list_img_p'><img src='", htmlspecialchars($data['goods_photo']) ,"id='detail_list_img'></p>";
+            echo "<p id='detail_list_img_p'><img src='", htmlspecialchars($data['goods_photo']) ,"' id='detail_list_img'></p>";
             echo "<p id='detail_list_price'>値段:", htmlspecialchars($data['price']), "</p>";
             echo "<p id='detail_list_buynum_p'>購入数:<input type='number' name='num' id='detail_list_buynum'></p>";
             echo "</div>";
@@ -98,7 +94,7 @@
             foreach($pdo -> query('SELECT * FROM review WHERE goods_id = '.$_POST['goods_id'].' ORDER BY review_id DESC') as $row){
                 //評価
                 echo "<div id='detail_review'>";
-                echo "<div id='detail_review_title'>", htmlspecialchars($row['review_title']),"</div><br>";
+                echo "<div id='detail_review_title'>", htmlspecialchars($row['review_title']),"</div>";
                 echo "<div id='detail_review_assessment'>";
                 for($i = 0; $i < $row['assessment']; $i++){
                     echo "★";
@@ -106,10 +102,10 @@
                 for($i = 0; $i < 5-$row['assessment']; $i++){
                     echo "☆";
                 }
-                echo "</div><br>";
+                echo "</div>";
                 //内容
-                echo "<div id='detail_review_sentence'>", htmlspecialchars($row['sentence']), "</div><br>";
-                echo "<div id='detail_review_createday'>", htmlspecialchars($row['create_day']), "</div><br>";
+                echo "<div id='detail_review_sentence'>", htmlspecialchars($row['sentence']), "</div>";
+                echo "<div id='detail_review_createday'>", htmlspecialchars($row['create_day']), "</div>";
                 echo "</div>";
             }
             //レビュー投稿遷移
@@ -118,7 +114,27 @@
             echo '</form>';
         } else if(isset($_POST['review'])){
         //レビュー投稿
-            
+            //商品データ参照
+            $sql = $pdo -> prepare('SELECT * FROM goods WHERE goods_id = ?');
+            $sql -> execute([$_POST['goods_id']]);
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
+            echo '<div id="review_post">';
+            echo '<div id="review_goods_title">商品レビュー</div>';
+            echo '<div id="review_goods_description">', htmlspecialchars($data['goods_explanation']) ,'</div>';
+            echo '<div id="review_assessment_title">総合評価</div>';
+            echo '<div id="review_assessment_star">';
+            echo '<input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star"></label>';
+            echo '</div>';
+            echo '</div>';
         } else if(isset($_POST['aa'])){
         //
 
@@ -129,7 +145,7 @@
                 echo '<div id="top_list">';
                 echo "<p id='top_list_name'>", htmlspecialchars($row['goods_name']), "</p>";
                 echo "<p id='top_list_description'>説明:", htmlspecialchars($row['goods_explanation']), "</p>";
-                echo '<p id="top_list_img_p"><img src="', htmlspecialchars($row['goods_photo']), 'id="top_list_img"></p>';
+                echo '<p id="top_list_img_p"><img src="', htmlspecialchars($row['goods_photo']), '" id="top_list_img"></p>';
                 echo "<p id='top_list_price'>値段: ", htmlspecialchars($row['price']), "</p>";
                 echo '<input type="hidden" name="goods_id" value="',$row['goods_id'],'">';
                 echo '<p><input id="top_list_button" type="submit" name="detail"></p>';

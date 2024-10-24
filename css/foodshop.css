@@ -8,12 +8,12 @@ body {
         top: 0;
         left: 0;
         right: 0;
-        bottom: 89%;
+        height: 90px;
         background-color: #F8F2D0;
     }
 
     /*shopロゴ*/
-        .menu_top{
+    .menu_top{
         position: fixed;
         top: 12px;
         width: 150px;
@@ -24,27 +24,35 @@ body {
     .menu_search {
         position: fixed;
         top: 12px;
-        right: 40%;
+        width: 220px;
+    }
+
+    /* メニューバーの検索バーのpタグ */
+    #menu_search_p {
+        position: fixed;
+        min-width: 100%;
         text-align: center;
-        line-height: 0px;
+    }
+
+    /* メニューバーの検索バーのinputタグ */
+    #menu_search_input {
+        height: 25px;
     }
 
     /* メニューバーのカートアイコン */
     .menu_cart {
         position: fixed;
-        top: 10px;
+        top: 15px;
         right: 150px;
         text-align: right;
-        line-height: 0px;
     }
 
     /* メニューバーのアカウントアイコン */
     .menu_acc {
         position: fixed;
-        top: 10px;
+        top: 15px;
         right: 50px;
         text-align: right;
-        line-height: 0px;
     }
 
 /* ↑メニューバー系なので触らないでほしい */
@@ -80,11 +88,9 @@ body {
 */
 
 /* 検索結果の画像表示のimgタグ */
-/*
 #search_list_img {
-
+    height: 80px;
 }
-*/
 
 /* 検索結果の値段 */
 /*
@@ -244,11 +250,9 @@ body {
 */
 
 /* トップページの商品リストの画像表示のimgタグ */
-/*
 #top_list_img {
-
+    height: 80px;
 }
-*/
 
 /* トップページの商品リストの値段 */
 /*
@@ -264,3 +268,11 @@ body {
 
 }
 */
+
+.rating > label:before {
+    content: "\2606";
+}
+  
+.rating > input:checked ~ label:before {
+    content: "\2605";
+}
