@@ -16,10 +16,15 @@ body {
     .menu_top{
         position: fixed;
         top: 12px;
-        width: 150px;
         display: block;
     }
-
+    
+    /*検索バーの大きさ調整*/
+    .search{
+        text-align: center;
+        padding-right: 20%;
+    }
+    
     /* メニューバーの検索バー */
     .menu_search {
         position: fixed;
@@ -38,7 +43,7 @@ body {
     #menu_search_input {
         height: 25px;
     }
-
+    
     /* メニューバーのカートアイコン */
     .menu_cart {
         position: fixed;
@@ -268,11 +273,3 @@ body {
 
 }
 */
-
-.rating > label:before {
-    content: "\2606";
-}
-  
-.rating > input:checked ~ label:before {
-    content: "\2605";
-}
