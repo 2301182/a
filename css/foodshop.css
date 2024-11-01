@@ -64,6 +64,10 @@ body {
 /* ↓ここから下にcss書き足してってほしい */
 /* できればcssそれぞれになんのcssか書いてくれると進捗が把握しやすい */
 
+/*                                     */
+/*              検索結果                */
+/*                                     */
+
 /* 検索結果の大枠div */
 /*
 #search_list {
@@ -119,6 +123,9 @@ body {
 }
 */
 
+/*                                     */
+/*              商品詳細                */
+/*                                     */
 
 /* 商品詳細の商品名 */
 /*
@@ -225,6 +232,134 @@ body {
 }
 */
 
+/*                                     */
+/*             レビュー投稿             */
+/*                                     */
+
+/* レビュー投稿ページの大枠div */
+/*
+.review_post {
+    
+}
+*/
+
+/* レビュー投稿ページのtitle(商品レビュー) */
+/*
+#review_goods_title {
+
+}
+*/
+
+/* レビュー投稿ページの商品説明文 */
+/*
+#review_goods_description {
+    
+}
+*/
+
+/* レビュー投稿ページの総合評価のtitle(総合評価) */
+/*
+#review_assessment_title {
+    
+}
+*/
+
+/* レビュー投稿ページの総合評価の星表示の大枠div */
+.review_assessment_star {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+    font-size: 30px;
+}
+
+/* レビュー投稿ページの総合評価の星表示のradioボタン消し */
+.review_assessment_star > input {
+    display: none;
+}
+
+/* レビュー投稿ページの総合評価の星表示の未選択時 */
+.review_assessment_star > label:before {
+    content: "\2606";
+    color: #f8e58c;
+}
+
+/* レビュー投稿ページの総合評価の星表示の選択時 */
+.review_assessment_star > input:checked ~ label:before {
+    content: "\2605";
+    color: yellow;
+    -webkit-text-stroke: 1px #f8e58c;
+}
+
+/* レビュー投稿ページのレビュータイトルのtitle(レビュータイトル) */
+/*
+#review_title_title {
+    
+}
+*/
+
+/* レビュー投稿ページのレビュータイトル */
+/*
+#review_title {
+    
+}
+*/
+
+/* レビュー投稿ページのレビューテキストのtitle(レビューを追加) */
+/*
+#review_sentence_title {
+    
+}
+*/
+
+/* レビュー投稿ページのレビューテキスト */
+/*
+#review_sentence {
+    
+}
+*/
+
+/* レビュー投稿ページのレビュー投稿ボタン */
+/*
+#review_post_button {
+    
+}
+*/
+
+/*                                     */
+/*           レビュー投稿完了           */
+/*                                     */
+
+/* レビュー投稿完了ページの大枠div */
+/*
+#review_success {
+    
+}
+*/
+
+/* レビュー投稿完了ページのtitle(投稿完了) */
+/*
+#review_success_title {
+    
+}
+*/
+
+/* レビュー投稿完了ページのレビュー投稿処理結果(レビューを投稿しました。) */
+/*
+#review_success_text {
+    
+}
+*/
+
+/* レビュー投稿完了ページのトップページボタン(トップページへ) */
+/*
+#review_success_btn {
+    
+}
+*/
+
+/*                                     */
+/*             トップページ             */
+/*                                     */
 
 /* トップページの商品リストの大枠div */
 /*
@@ -270,6 +405,493 @@ body {
     これを商品リスト触ったときに遷移するくらい大きくしてほしい */
 /*
 #top_list_button {
+
+}
+*/
+
+
+
+
+
+
+/*                                     */
+/*             カート一覧               */
+/*                                     */
+
+/* カート一覧の大枠div */
+/*
+#cart_list {
+
+}
+*/
+
+/* カート一覧の商品名div */
+/*
+#cart_list_name {
+
+}
+*/
+
+/* カート一覧の商品説明div */
+/*
+#cart_list_description {
+
+}
+*/
+
+/* カート一覧の画像表示の外枠div */
+/*
+#cart_list_img_div {
+
+}
+*/
+
+/* カート一覧の画像表示のimgタグ */
+/*
+#cart_list_img {
+
+}
+*/
+
+/* カート一覧の値段div */
+/*
+#cart_list_price {
+
+}
+*/
+
+/* カート一覧の購入数div */
+/*
+#cart_list_num {
+
+}
+*/
+
+/* カート一覧の商品詳細遷移ボタンの外枠div */
+/*
+#cart_list_btn {
+
+}
+*/
+
+/* カート一覧の商品詳細遷移ボタンのinput */
+/*
+#cart_list_button {
+
+}
+*/
+
+/* カート一覧から商品をカート削除するボタンの外枠div */
+/*
+#cart_list_rem {
+
+}
+*/
+
+/* カート一覧から商品をカート削除するボタンのinput */
+/*
+#cart_list_remove {
+
+}
+*/
+
+/* カート一覧の注文ボタンのdiv */
+/*
+#cart_order_btn {
+
+}
+*/
+
+/* カート一覧の注文ボタンのinput */
+/*
+#cart_order_button {
+
+}
+*/
+
+/*                                     */
+/*             注文手続き               */
+/*                                     */
+
+/* 注文手続きのカート一覧の大枠div */
+/*
+#order_cart_list {
+
+}
+*/
+
+/* 注文手続きのカート一覧の商品名div */
+/*
+#order_cart_list_name {
+
+}
+*/
+
+/* 注文手続きのカート一覧の商品説明div */
+/*
+#order_cart_list_description {
+
+}
+*/
+
+/* 注文手続きのカート一覧の画像表示の外枠div */
+/*
+#order_cart_list_img_div {
+
+}
+*/
+
+/* 注文手続きのカート一覧の画像表示のimgタグ */
+/*
+#order_cart_list_img {
+
+}
+*/
+
+/* 注文手続きのカート一覧の値段div */
+/*
+#order_cart_list_price {
+
+}
+*/
+
+/* 注文手続きのカート一覧の購入数div */
+/*
+#order_cart_list_num {
+
+}
+*/
+
+/* 注文手続きの支払方法の大枠div */
+/*
+#payment {
+
+}
+*/
+
+/* 注文手続きの支払方法のtitle(支払方法) */
+/*
+#payment_title {
+
+}
+*/
+
+/* 注文手続きの支払方法のボタンのdiv(現金) */
+/*
+#payment_cash {
+
+}
+*/
+
+/* 注文手続きの支払方法のボタンのdiv(クレジットカード) */
+/*
+#payment_credit {
+
+}
+*/
+
+/* 注文手続きの支払方法のボタンのdiv(コンビニ決済) */
+/*
+#payment_convenience {
+
+}
+*/
+
+/* 注文手続きの支払方法のボタンのdiv(電子決済) */
+/*
+#payment_electrical {
+
+}
+*/
+
+/* 注文手続きの送り先入力の大枠div */
+/*
+#input_address {
+
+}
+*/
+
+/* 注文手続きの送り先入力のtitle(送り先入力) */
+/*
+#input_address_title {
+
+}
+*/
+
+/* 注文手続きの送り先入力の名前のtitle(名前：) */
+/*
+#input_address_name_title {
+
+}
+*/
+
+/* 注文手続きの送り先入力の名前入力div */
+/*
+#input_address_name {
+
+}
+*/
+
+/* 注文手続きの送り先入力の住所のtitle(住所：) */
+/*
+#input_address_address_title {
+
+}
+*/
+
+/* 注文手続きの送り先入力の住所入力div */
+/*
+#input_address_address {
+
+}
+*/
+
+/* 注文手続きの送り先入力の電話番号のtitle(電話番号：) */
+/*
+#input_address_tel_title {
+
+}
+*/
+
+/* 注文手続きの送り先入力の電話番号入力div */
+/*
+#input_address_tel {
+
+}
+*/
+
+/* 注文手続きの注文確定ボタンの外枠div(確定) */
+/*
+#order_submit {
+
+}
+*/
+
+/*                                     */
+/*              注文完了                */
+/*                                     */
+
+/* 注文完了の大枠div */
+/*
+#order_success {
+
+}
+*/
+
+/* 注文完了のtitle(注文完了) */
+/*
+#order_success_title {
+
+}
+*/
+
+/* 注文完了の完了文(商品注文が完了しました。･･･) */
+/*
+#order_success_text {
+
+}
+*/
+
+/* 注文完了のトップページ遷移ボタン */
+/*
+#order_success_btn {
+
+}
+*/
+
+
+
+
+
+/*                                     */
+/*              ログイン                */
+/*                                     */
+
+/* ログインページの大枠div */
+/*
+#login {
+
+}
+*/
+
+/* ログインページのtitle(ログイン) */
+/*
+#login_title {
+
+}
+*/
+
+/* ログインページのメールアドレス入力のtitle(メールアドレス) */
+/*
+#login_email_title {
+
+}
+*/
+
+/* ログインページのメールアドレス入力の外枠div */
+/*
+#login_email_input {
+
+}
+*/
+
+/* ログインページのパスワード入力のtitle(パスワード) */
+/*
+#login_pword_title {
+
+}
+*/
+
+/* ログインページのパスワード入力の外枠div */
+/*
+#login_pword_input {
+
+}
+*/
+
+/* ログインページのログイン失敗時のみ表示されるエラー文(パスワード不一致) */
+/*
+#login_fail {
+
+}
+*/
+
+/* ログインページのログインボタンの外枠div */
+/*
+#login_form_btn {
+
+}
+*/
+
+/* ログインページの新規作成ボタンの外枠div */
+/*
+#login_create_account {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページのtitle(新規登録) */
+/*
+#create_acc_title {
+
+}
+*/
+
+/* アカウント新規作成ページの名前のtitle */
+/*
+#create_acc_name_title {
+
+}
+*/
+
+/* アカウント新規作成ページの名前入力の外枠div */
+/*
+#create_acc_name {
+
+}
+*/
+
+/* アカウント新規作成ページのメールアドレスのtitle */
+/*
+#create_acc_mail_title {
+
+}
+*/
+
+/* アカウント新規作成ページのメールアドレス入力の外枠div */
+/*
+#create_acc_mail {
+
+}
+*/
+
+/* アカウント新規作成ページのメールアドレスのエラー文(メールアドレスが正しくありません) */
+/*
+#create_acc_mail_error {
+
+}
+*/
+
+/* アカウント新規作成ページのパスワードのtitle */
+/*
+#create_acc_pass_title {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc_pass {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
+
+}
+*/
+
+/* アカウント新規作成ページの大枠div */
+/*
+#create_acc {
 
 }
 */
