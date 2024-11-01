@@ -58,7 +58,7 @@
                 echo '<form method="post">';
                 echo '<div id="modify_acc">';
                 echo '<div id="modify_acc_title">登録情報変更</div>';
-                echo '<div id="modify_acc_name_title">氏名</div>';
+                echo '<div id="modify_acc_name_title">名前</div>';
                 echo '<div id="modify_acc_name"><input type="text" required name="name" value="'.$user_data['user_name'].'"></div>';
                 echo '<div id="modify_acc_mail_title">メールアドレス</div>';
                 //メールアドレスが既に使用されていた場合
@@ -186,7 +186,7 @@
                 echo '<div id="create_acc">';
                 echo '<form method="post">';
                 echo '<div id="create_acc_title">新規登録</div>';
-                echo '<div id="create_acc_name_title">氏名</div>';
+                echo '<div id="create_acc_name_title">名前</div>';
                 echo '<div id="create_acc_name"><input type="text" required name="name"></div>';
                 echo '<div id="create_acc_mail_title">メールアドレス</div>';
                 //メールアドレスが既に使用されていた場合
