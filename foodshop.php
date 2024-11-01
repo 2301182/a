@@ -205,7 +205,7 @@
                 echo '<div id="top_list_img_p"><img src="', htmlspecialchars($row['goods_photo']), '" id="top_list_img"></div>';
                 echo "<div id='top_list_price'>値段: ", htmlspecialchars($row['price']), "</div>";
                 echo '<input type="hidden" name="goods_id" value="',$row['goods_id'],'">';
-                echo '<div><input id="top_list_button" type="submit" name="detail"></div>';
+                echo '<div id="top_list_btn"><input id="top_list_button" type="submit" name="detail"></div>';
                 echo '</div>';
                 echo '</form>';
             }
