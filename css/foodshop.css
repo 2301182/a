@@ -2,63 +2,66 @@ body {
     margin: 0;
 }
 
-    /* メニューバー本体 */
-    header{
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 90px;
-        background-color: #F8F2D0;
-    }
+header{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background-color: #F8F2D0;
+}
 
-    /*shopロゴ*/
-    .menu_top{
-        position: fixed;
-        top: 12px;
-        display: block;
-    }
-    
-    /*検索バーの大きさ調整*/
-    .search{
-        text-align: center;
-        padding-right: 20%;
-    }
-    
-    /* メニューバーの検索バー */
-    .menu_search {
-        position: fixed;
-        top: 12px;
-        width: 220px;
-    }
+/*shopロゴ*/
+.menu_top{
+    z-index: 105;
+    position: fixed;
+    top: 12px;
+    display: block;
+}
 
-    /* メニューバーの検索バーのpタグ */
-    #menu_search_p {
-        position: fixed;
-        min-width: 100%;
-        text-align: center;
-    }
+/*検索バーの大きさ調整*/
+.search{
+    text-align: center;
+    padding-right: 20%;
+}
 
-    /* メニューバーの検索バーのinputタグ */
-    #menu_search_input {
-        height: 25px;
-    }
-    
-    /* メニューバーのカートアイコン */
-    .menu_cart {
-        position: fixed;
-        top: 15px;
-        right: 150px;
-        text-align: right;
-    }
+/* メニューバーの検索バー */
+.menu_search {
+    position: fixed;
+    top: 12px;
+    width: 220px;
+}
 
-    /* メニューバーのアカウントアイコン */
-    .menu_acc {
-        position: fixed;
-        top: 15px;
-        right: 50px;
-        text-align: right;
-    }
+/* メニューバーの検索バーのpタグ */
+#menu_search_p {
+    position: fixed;
+    min-width: 100%;
+    text-align: center;
+}
+
+/* メニューバーの検索バーのinputタグ */
+#menu_search_input {
+    height: 25px;
+}
+
+/* メニューバーのカートアイコン */
+.menu_cart {
+    z-index: 105;
+    position: fixed;
+    top: 15px;
+    right: 150px;
+    text-align: right;
+}
+
+/* メニューバーのアカウントアイコン */
+.menu_acc {
+    z-index: 105;
+    position: fixed;
+    top: 15px;
+    right: 50px;
+    text-align: right;
+}
 
 /* ↑メニューバー系なので触らないでほしい */
 /* ↓ここから下にcss書き足してってほしい */
@@ -361,61 +364,78 @@ body {
 /*             トップページ             */
 /*                                     */
 
-/* トップページの商品リストの大枠div */
-/*
-#top_list {
-
+/* トップページの大枠div */
+#top {
+    display: flex;
+    flex-wrap: wrap;  /* アイテムを左から並べる */
+    gap:20px;        /* 箱の余白 */
 }
-*/
+
+/* トップページの商品リストの大枠div */
+#top_list {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    height: 300px;
+}
 
 /* トップページの商品リストの商品名 */
-/*
 #top_list_name {
-
+    position: relative;
+    top: 8px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
-*/
 
 /* トップページの商品リストの商品詳細(簡易版) */
-/*
 #top_list_description {
-
+    position: relative;
+    top: 10px;
+    text-align: center;
+    width: 300px;  
+    overflow: hidden;  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 行数を指定 */
+    line-clamp: 2;
 }
-*/
 
-/* トップページの商品リストの画像表示の外枠pタグ */
-/*
+/* トップページの商品リストの画像表示の外枠pタグ */ 
 #top_list_img_p {
-
+    text-align: center;
 }
-*/
 
 /* トップページの商品リストの画像表示のimgタグ */
 #top_list_img {
+    position: relative;
     height: 80px;
+    top: 40px;
 }
 
 /* トップページの商品リストの値段 */
-/*
 #top_list_price {
-
+    position: relative;
+    text-align: center;
+    top: 50px;
 }
-*/
 
-/* トップページの商品リストの商品詳細遷移ボタンの外枠div*/
-/*
-#top_list_btn {
-
-}
-*/
-
-/* トップページの商品リストの商品詳細遷移ボタン
-    これを商品リスト触ったときに遷移するくらい大きくしてほしい */
-/*
 #top_list_button {
-
+    z-index: 5;
+    position: absolute;
+    display: inline-block;
+    border: none;
+    text-align: left;
+    background-color: #27acd9;
+    color: #FFF;
+    cursor: pointer;
+    animation: move_c 1s infinite;
+    margin:0;
+    padding:0px;
+    border-radius:0px;
+    background: rgba(108,222,255,0);
+    width: 300px;
+    height: 299px;
 }
-*/
-
 
 
 
